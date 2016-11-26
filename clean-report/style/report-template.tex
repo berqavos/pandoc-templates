@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\usepackage{a4wide}
+\renewcommand{\headwidth}{15cm} %use this if you are using a4wide
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{caption}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage{tabularx}
+\usepackage{pdflscape}
+\usepackage{titling}
+\usepackage[default]{opensans}
+\usepackage{palatino}
+\usepackage[scaled=.9]{sourcecodepro}
+\usepackage[pdftex,hidelinks,backref=true,colorlinks,linkcolor=black,citecolor=blue,urlcolor=blue]{hyperref}
+
+\usepackage{pdfpages} % needed for including 
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{435pt}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+\usepackage[final, babel]{microtype} % many good lay-out/justification effects
+
+\RequirePackage{etoolbox}
+\definecolor{darkblue}{RGB}{76,87,117}
+\definecolor{light-gray}{gray}{0.95}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{$author$}
+\title{$title$}
+\date{$date$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength\parindent{0pt}
+\begin{document}
+%% document definitions
+\lstset{backgroundcolor=\color{light-gray},frame=none,breaklines=true,basicstyle=\ttfamily,tabsize=2}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{}
+\renewcommand{\footrulewidth}{0.4pt} %a line for the footer
+%
+\setlength{\droptitle}{-3cm} 
+\pretitle{\begin{flushright}\LARGE}
+\posttitle{\par\end{flushright}\vskip 0.5em}
+\preauthor{\begin{flushright}\large \lineskip 0.5em}
+\postauthor{\par\end{flushright}}
+\predate{\begin{flushright}\large}
+\postdate{\par\end{flushright}}
+\maketitle
+%\thispagestyle{empty} %no pagenumber on title
+%\newpage
+%\tableofcontents
+%\newpage
+
+$body$
+
+\end{document}
